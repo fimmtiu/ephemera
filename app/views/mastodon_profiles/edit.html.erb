@@ -1,0 +1,17 @@
+<h1>Edit Profile</h1>
+
+<%= form_with url: mastodon_profile_path, method: :patch, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :display_name, "Display Name" %>
+    <%= f.text_field :display_name, value: @profile["display_name"], name: "profile[display_name]" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :note, "Bio" %>
+    <%= f.text_area :note, value: @profile["note"], rows: 5, name: "profile[note]" %>
+  </div>
+
+  <%= f.submit "Save", class: "btn" %>
+<% end %>
+
+<%= link_to "Back", mastodon_profile_path, class: "btn" %>

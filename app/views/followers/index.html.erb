@@ -1,0 +1,24 @@
+<h1>Followers</h1>
+
+<% if @followers.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Avatar</th>
+        <th>Username</th>
+        <th>Display Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @followers.each do |follower| %>
+        <tr>
+          <td><img src="<%= follower["avatar"] %>" alt="" width="40" height="40" style="border-radius: 50%;"></td>
+          <td>@<%= follower["username"] %></td>
+          <td><%= follower["display_name"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No followers yet.</p>
+<% end %>

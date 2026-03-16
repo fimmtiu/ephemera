@@ -1,0 +1,12 @@
+<h1>Upload Pictures</h1>
+
+<%= form_with url: pictures_path, local: true, multipart: true do |f| %>
+  <div class="form-group">
+    <%= f.label :files, "Select images" %>
+    <%= f.file_field :files, multiple: true, name: "pictures[files][]", accept: "image/*" %>
+  </div>
+
+  <%= f.submit "Upload", class: "btn" %>
+<% end %>
+
+<%= link_to "Back", pictures_path, class: "btn" %>

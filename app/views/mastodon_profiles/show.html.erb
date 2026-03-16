@@ -1,0 +1,14 @@
+<h1>Mastodon Profile</h1>
+
+<dl>
+  <dt>Username</dt>
+  <dd>@<%= @profile["username"] %></dd>
+
+  <dt>Display Name</dt>
+  <dd><%= @profile["display_name"] %></dd>
+
+  <dt>Bio</dt>
+  <dd><%= raw @profile["note"] %></dd>
+</dl>
+
+<%= link_to "Edit Profile", edit_mastodon_profile_path, class: "btn" %>

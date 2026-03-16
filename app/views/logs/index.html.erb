@@ -1,0 +1,30 @@
+<h1>Posting Log</h1>
+
+<% if @logs.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Picture</th>
+        <th>Order at Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @logs.each do |log| %>
+        <tr>
+          <td><%= log.posted_at.strftime("%Y-%m-%d %H:%M") %></td>
+          <td>
+            <% if log.picture %>
+              <%= link_to log.picture.original_filename || log.picture.s3_key, picture_path(log.picture) %>
+            <% else %>
+              (deleted)
+            <% end %>
+          </td>
+          <td><%= log.posted_order %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No postings yet.</p>
+<% end %>

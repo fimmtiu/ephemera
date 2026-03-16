@@ -1,0 +1,35 @@
+<h1>Pictures</h1>
+
+<%= link_to "Upload Pictures", new_picture_path, class: "btn" %>
+
+<% if @pictures.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Order</th>
+        <th>Filename</th>
+        <th>Alt Text</th>
+        <th>Hashtags</th>
+        <th>Sensitive</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pictures.each do |picture| %>
+        <tr>
+          <td><%= picture.order %></td>
+          <td><%= link_to picture.original_filename || picture.s3_key, picture_path(picture) %></td>
+          <td><%= truncate(picture.alt_text, length: 50) %></td>
+          <td><%= picture.hashtags %></td>
+          <td><%= picture.sensitive_content.present? ? "Yes" : "No" %></td>
+          <td>
+            <%= link_to "Edit", edit_picture_path(picture), class: "btn" %>
+            <%= button_to "Delete", picture_path(picture), method: :delete, class: "btn btn-danger", data: { turbo_confirm: "Delete this picture?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No pictures yet. Upload some!</p>
+<% end %>
