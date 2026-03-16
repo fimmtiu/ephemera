@@ -1,0 +1,8 @@
+{
+  "server": "https://mastodon.example.com",
+  "app_name": "Ephemera",
+  "client_id": null,
+  "client_secret": null,
+  "access_token": null,
+  "redirect_uri": "urn:ietf:wg:oauth:2.0:oob"
+}
