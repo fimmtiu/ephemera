@@ -1,0 +1,464 @@
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "sessions"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "ip_address" varchar, "updated_at" datetime(6) NOT NULL, "user_agent" varchar, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_sessions_on_user_id" ON "sessions" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "email_address" varchar NOT NULL, "password_digest" varchar NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email_address" ON "users" ("email_address")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "asessions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "ip_address" varchar, "updated_at" datetime(6) NOT NULL, "user_agent" varchar, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_asessions_on_user_id" ON "asessions" ("user_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "asessions" ("id","created_at","ip_address","updated_at","user_agent","user_id")
+                     SELECT "id","created_at","ip_address","updated_at","user_agent","user_id" FROM "sessions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "sessions"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "ip_address" varchar, "updated_at" datetime(6) NOT NULL, "user_agent" varchar, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_758836b4f0"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_sessions_on_user_id" ON "sessions" ("user_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "sessions" ("id","created_at","ip_address","updated_at","user_agent","user_id")
+                     SELECT "id","created_at","ip_address","updated_at","user_agent","user_id" FROM "asessions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "asessions"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260316061436)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20260316061435);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2026-03-16 06:15:05.177336', '2026-03-16 06:15:05.177336') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '14976343b9e65975f63399891588ec4fc40c28aa', '2026-03-16 06:15:05.177703', '2026-03-16 06:15:05.177704') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "users";
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:15:05.441902', 'one@example.com', '$2a$12$nSx23oe2/4CzSRFB98ABqen1fHwN0ReV08cMHVO4wL18YCqjiUPCK', '2026-03-16 06:15:05.441902'), (298486374, '2026-03-16 06:15:05.441902', 'two@example.com', '$2a$12$nSx23oe2/4CzSRFB98ABqen1fHwN0ReV08cMHVO4wL18YCqjiUPCK', '2026-03-16 06:15:05.441902')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+UserTest: test_downcases_and_strips_email_address
+-------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------
+SessionsControllerTest: test_new
+--------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | GC: 4.9ms)
+Completed 200 OK in 30ms (Views: 13.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.9ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------
+SessionsControllerTest: test_create_with_invalid_credentials
+------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/session" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 221ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------
+SessionsControllerTest: test_create_with_valid_credentials
+----------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/session" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSession Create (0.2ms)[0m  [1m[32mINSERT INTO "sessions" ("created_at", "ip_address", "updated_at", "user_agent", "user_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-03-16 06:15:05.931469"], ["ip_address", "127.0.0.1"], ["updated_at", "2026-03-16 06:15:05.931469"], ["user_agent", nil], ["user_id", 298486374]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.5ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------
+SessionsControllerTest: test_destroy
+------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSession Create (1.2ms)[0m  [1m[32mINSERT INTO "sessions" ("created_at", "ip_address", "updated_at", "user_agent", "user_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-03-16 06:15:05.934593"], ["ip_address", nil], ["updated_at", "2026-03-16 06:15:05.934593"], ["user_agent", nil], ["user_id", 298486374]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/session" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSession Destroy (0.1ms)[0m  [1m[31mDELETE FROM "sessions" WHERE "sessions"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 303 See Other in 6ms (ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------
+PasswordsControllerTest: test_new
+---------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/passwords/new" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------
+PasswordsControllerTest: test_create
+------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/passwords" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by PasswordsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 972f8fca-04e5-4979-bf8b-e7cc869b138f) to Test(default) with arguments: "PasswordsMailer", "reset", "deliver_now", {:args=>[#<GlobalID:0x0000000132e3f818 @uri=#<URI::GID gid://ephemera-temp/User/298486374>>]}
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------
+PasswordsControllerTest: test_edit_with_invalid_password_reset_token
+--------------------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/passwords/invalid%20token/edit" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by PasswordsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+Redirected to http://www.example.com/passwords/new
+Filter chain halted as :set_user_by_token rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started GET "/passwords/new" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 0.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.2ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------------------
+PasswordsControllerTest: test_create_for_an_unknown_user_redirects_but_sends_no_mail
+------------------------------------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/passwords" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by PasswordsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------
+PasswordsControllerTest: test_edit
+----------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiU1JGQjk4QUJxZSJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjMwOjA1Ljk1OVoiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--f567a1d3414344051ee53e4ac1dc26942e9e0d1e/edit" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by PasswordsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 0.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.2ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------
+PasswordsControllerTest: test_update
+------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started PUT "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiU1JGQjk4QUJxZSJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjMwOjA1Ljk2MVoiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--6251d449fd5e7d0158b449a468b87ea7765b3bf0" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by PasswordsController#update as HTML
+  Parameters: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "token"=>"[FILTERED]"}
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+[31mUnpermitted parameter: :token. Context: { controller: PasswordsController, action: update, request: #<ActionDispatch::Request:0x00000001232346b8>, params: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"passwords", "action"=>"update", "token"=>"[FILTERED]"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "[FILTERED]"], ["updated_at", "2026-03-16 06:15:05.963889"], ["id", 298486374]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSession Load (0.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."user_id" = ?[0m  [["user_id", 298486374]]
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms (3 queries, 1 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------
+PasswordsControllerTest: test_update_with_non_matching_passwords
+----------------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started PUT "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiU1JGQjk4QUJxZSJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjMwOjA1Ljk2N1oiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--0e3aebb8e709bc1fc5a5fcf3fec0cb125cee3206" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by PasswordsController#update as HTML
+  Parameters: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "token"=>"[FILTERED]"}
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+[31mUnpermitted parameter: :token. Context: { controller: PasswordsController, action: update, request: #<ActionDispatch::Request:0x000000013307e7f0>, params: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"passwords", "action"=>"update", "token"=>"[FILTERED]"} }[0m
+Redirected to http://www.example.com/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiU1JGQjk4QUJxZSJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjMwOjA1Ljk2N1oiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--0e3aebb8e709bc1fc5a5fcf3fec0cb125cee3206/edit
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (1 query, 1 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started GET "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiU1JGQjk4QUJxZSJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjMwOjA1Ljk2N1oiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--0e3aebb8e709bc1fc5a5fcf3fec0cb125cee3206/edit" for 127.0.0.1 at 2026-03-15 23:15:05 -0700
+Processing by PasswordsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms (1 query, 1 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "users";
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:15:25.648991', 'one@example.com', '$2a$12$pYu2izFi0AQSL6RXZqucN.zyShk/g/YNmnJyqfdw08bItyrZrZFqq', '2026-03-16 06:15:25.648991'), (298486374, '2026-03-16 06:15:25.648991', 'two@example.com', '$2a$12$pYu2izFi0AQSL6RXZqucN.zyShk/g/YNmnJyqfdw08bItyrZrZFqq', '2026-03-16 06:15:25.648991')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+UserTest: test_downcases_and_strips_email_address
+-------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------------------
+PasswordsControllerTest: test_create_for_an_unknown_user_redirects_but_sends_no_mail
+------------------------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/passwords" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by PasswordsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------
+PasswordsControllerTest: test_update_with_non_matching_passwords
+----------------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started PUT "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiTDZSWFpxdWNOLiJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjMwOjI1LjY3NloiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--fae8209d0b5faafd779666c8a04ec3c93995680f" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by PasswordsController#update as HTML
+  Parameters: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "token"=>"[FILTERED]"}
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+[31mUnpermitted parameter: :token. Context: { controller: PasswordsController, action: update, request: #<ActionDispatch::Request:0x0000000123cd9758>, params: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"passwords", "action"=>"update", "token"=>"[FILTERED]"} }[0m
+Redirected to http://www.example.com/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiTDZSWFpxdWNOLiJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjMwOjI1LjY3NloiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--fae8209d0b5faafd779666c8a04ec3c93995680f/edit
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (1 query, 1 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started GET "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiTDZSWFpxdWNOLiJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjMwOjI1LjY3NloiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--fae8209d0b5faafd779666c8a04ec3c93995680f/edit" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by PasswordsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms (1 query, 1 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------
+PasswordsControllerTest: test_new
+---------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/passwords/new" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------
+PasswordsControllerTest: test_create
+------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/passwords" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by PasswordsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: c140c80b-9220-445f-9434-a1cb3d01b36e) to Test(default) with arguments: "PasswordsMailer", "reset", "deliver_now", {:args=>[#<GlobalID:0x0000000123dbcdc8 @uri=#<URI::GID gid://ephemera-temp/User/298486374>>]}
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------
+PasswordsControllerTest: test_update
+------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started PUT "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiTDZSWFpxdWNOLiJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjMwOjI1LjY4OFoiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--34ea3d720545879187d6fc199d2952873eca8d12" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by PasswordsController#update as HTML
+  Parameters: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "token"=>"[FILTERED]"}
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+[31mUnpermitted parameter: :token. Context: { controller: PasswordsController, action: update, request: #<ActionDispatch::Request:0x0000000123e119b8>, params: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"passwords", "action"=>"update", "token"=>"[FILTERED]"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "[FILTERED]"], ["updated_at", "2026-03-16 06:15:25.694421"], ["id", 298486374]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSession Load (0.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."user_id" = ?[0m  [["user_id", 298486374]]
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms (3 queries, 1 cached) | GC: 4.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------
+PasswordsControllerTest: test_edit_with_invalid_password_reset_token
+--------------------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/passwords/invalid%20token/edit" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by PasswordsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+Redirected to http://www.example.com/passwords/new
+Filter chain halted as :set_user_by_token rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+Started GET "/passwords/new" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------
+PasswordsControllerTest: test_edit
+----------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiTDZSWFpxdWNOLiJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjMwOjI1LjcwMVoiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--b7fea7d3d5b73ccf04cbffc75e023765efecf137/edit" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by PasswordsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------
+SessionsControllerTest: test_create_with_valid_credentials
+----------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/session" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSession Create (0.2ms)[0m  [1m[32mINSERT INTO "sessions" ("created_at", "ip_address", "updated_at", "user_agent", "user_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-03-16 06:15:25.917157"], ["ip_address", "127.0.0.1"], ["updated_at", "2026-03-16 06:15:25.917157"], ["user_agent", nil], ["user_id", 298486374]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 215ms (ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------
+SessionsControllerTest: test_new
+--------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------
+SessionsControllerTest: test_create_with_invalid_credentials
+------------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/session" for 127.0.0.1 at 2026-03-15 23:15:25 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 218ms (ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------
+SessionsControllerTest: test_destroy
+------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSession Create (0.1ms)[0m  [1m[32mINSERT INTO "sessions" ("created_at", "ip_address", "updated_at", "user_agent", "user_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-03-16 06:15:26.140791"], ["ip_address", nil], ["updated_at", "2026-03-16 06:15:26.140791"], ["user_agent", nil], ["user_id", 298486374]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/session" for 127.0.0.1 at 2026-03-15 23:15:26 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mSession Load (0.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSession Destroy (0.1ms)[0m  [1m[31mDELETE FROM "sessions" WHERE "sessions"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 303 See Other in 1ms (ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
