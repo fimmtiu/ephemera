@@ -1,4 +1,8 @@
 require "mapi/client"
+require "mapi/apps"
+require "mapi/media"
+require "mapi/accounts"
+require "mapi/oauth"
 
 module Mapi
   class ApiError < StandardError
