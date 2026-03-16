@@ -4926,3 +4926,1084 @@ Completed 302 Found in 236ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0m
 Redirected to http://www.example.com/
 Completed 302 Found in 263ms (ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 1.1ms)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.9ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:26:28.225717', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:26:28.225717'), (298486374, '2026-03-16 06:26:28.225717', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:26:28.225717');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:26:28.226372', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:26:28.226372'), (298486374, 'MyText', 'MyString', '2026-03-16 06:26:28.226372', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:26:28.226372');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:26:28.226402', 'one@example.com', '$2a$12$kMtLyiYMbOFfeE1SrnM/FunXhoK686EN6WYBMGQ0d5vzHa0bd8Fo2', '2026-03-16 06:26:28.226402'), (298486374, '2026-03-16 06:26:28.226402', 'two@example.com', '$2a$12$kMtLyiYMbOFfeE1SrnM/FunXhoK686EN6WYBMGQ0d5vzHa0bd8Fo2', '2026-03-16 06:26:28.226402')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------
+ExifSanitizerTest: test_ALLOWED_TAGS_does_not_contain_forbidden_tags
+--------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------
+ExifSanitizerTest: test_sanitize!_raises_on_failure
+---------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------
+ExifSanitizerTest: test_ALLOWED_TAGS_contains_expected_technical_tags
+---------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------
+ExifSanitizerTest: test_sanitize!_executes_the_command
+------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+ExifSanitizerTest: test_sanitize_calls_exiftool_with_correct_arguments
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:26:37.267218', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:26:37.267218'), (298486374, '2026-03-16 06:26:37.267218', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:26:37.267218');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:26:37.267830', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:26:37.267830'), (298486374, 'MyText', 'MyString', '2026-03-16 06:26:37.267830', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:26:37.267830');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:26:37.267855', 'one@example.com', '$2a$12$pA4ahj9JCTM7CtkZEU8MY.5boSwEbdr8uiVTFG9L2hkBGv9NgAMP.', '2026-03-16 06:26:37.267855'), (298486374, '2026-03-16 06:26:37.267855', 'two@example.com', '$2a$12$pA4ahj9JCTM7CtkZEU8MY.5boSwEbdr8uiVTFG9L2hkBGv9NgAMP.', '2026-03-16 06:26:37.267855')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------
+ExifSanitizerTest: test_ALLOWED_TAGS_does_not_contain_forbidden_tags
+--------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+ExifSanitizerTest: test_sanitize_calls_exiftool_with_correct_arguments
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------
+ExifSanitizerTest: test_sanitize!_executes_the_command
+------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------
+ExifSanitizerTest: test_sanitize!_raises_on_failure
+---------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------
+ExifSanitizerTest: test_ALLOWED_TAGS_contains_expected_technical_tags
+---------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mTruncate Tables (3.2ms)[0m  [1m[31mDELETE FROM "sessions";
+DELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[36mTruncate Tables (5.2ms)[0m  [1m[31mDELETE FROM "sessions";
+DELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users"[0m
+  [1m[36mTruncate Tables (5.5ms)[0m  [1m[31mDELETE FROM "sessions";
+DELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (5.7ms)[0m  [1m[31mDELETE FROM "sessions";
+DELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (6.4ms)[0m  [1m[31mDELETE FROM "sessions";
+DELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users"[0m
+  [1m[36mTruncate Tables (1.5ms)[0m  [1m[31mDELETE FROM "sessions";
+DELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[36mTruncate Tables (5.0ms)[0m  [1m[31mDELETE FROM "sessions";
+DELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[36mTruncate Tables (3.6ms)[0m  [1m[31mDELETE FROM "sessions";
+DELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (2.2ms)[0m  [1m[31mDELETE FROM "sessions";
+DELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (1.4ms)[0m  [1m[31mDELETE FROM "sessions";
+DELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (1.0ms)[0m  [1m[31mDELETE FROM "sessions";
+DELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.556662', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.556662'), (298486374, '2026-03-16 06:27:03.556662', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.556662');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:27:03.560265', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:27:03.560265'), (298486374, 'MyText', 'MyString', '2026-03-16 06:27:03.560265', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:27:03.560265');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.560332', 'one@example.com', '$2a$12$BAodnZvJZZhkxDHZOotjNuG/fbeB2dQspiQeeyaK44XpCRw4wh6Ha', '2026-03-16 06:27:03.560332'), (298486374, '2026-03-16 06:27:03.560332', 'two@example.com', '$2a$12$BAodnZvJZZhkxDHZOotjNuG/fbeB2dQspiQeeyaK44XpCRw4wh6Ha', '2026-03-16 06:27:03.560332')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+UserTest: test_downcases_and_strips_email_address
+-------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.566998', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.566998'), (298486374, '2026-03-16 06:27:03.566998', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.566998');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:27:03.569149', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:27:03.569149'), (298486374, 'MyText', 'MyString', '2026-03-16 06:27:03.569149', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:27:03.569149');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.569233', 'one@example.com', '$2a$12$7PCAuJSIFrnCwpnb8igpneiCetoYgSgvqntJZwwyDD6FKGjWmW54C', '2026-03-16 06:27:03.569233'), (298486374, '2026-03-16 06:27:03.569233', 'two@example.com', '$2a$12$7PCAuJSIFrnCwpnb8igpneiCetoYgSgvqntJZwwyDD6FKGjWmW54C', '2026-03-16 06:27:03.569233')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.562132', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.562132'), (298486374, '2026-03-16 06:27:03.562132', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.562132');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:27:03.569081', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:27:03.569081'), (298486374, 'MyText', 'MyString', '2026-03-16 06:27:03.569081', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:27:03.569081');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.569151', 'one@example.com', '$2a$12$qUzEH8dTIhjRVFiZFpETeegaT0z1paTWNiBgWymLOmW5ypGBcf0x6', '2026-03-16 06:27:03.569151'), (298486374, '2026-03-16 06:27:03.569151', 'two@example.com', '$2a$12$qUzEH8dTIhjRVFiZFpETeegaT0z1paTWNiBgWymLOmW5ypGBcf0x6', '2026-03-16 06:27:03.569151')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------
+PictureTest: test_reorder_to_moves_picture_forward
+--------------------------------------------------
+-----------------------------------------------------------------
+PictureTest: test_max_order_equals_count_after_various_operations
+-----------------------------------------------------------------
+  [1m[36mLog Delete All (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mLog Delete All (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Delete All (0.0ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mPicture Delete All (0.1ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.586819', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.586819'), (298486374, '2026-03-16 06:27:03.586819', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.586819');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:27:03.592697', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:27:03.592697'), (298486374, 'MyText', 'MyString', '2026-03-16 06:27:03.592697', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:27:03.592697');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.592848', 'one@example.com', '$2a$12$31vmp2XKcUsfocVJAonNDumdZjkJGUbAdcyrMnTRG1JKiwRFHBa6u', '2026-03-16 06:27:03.592848'), (298486374, '2026-03-16 06:27:03.592848', 'two@example.com', '$2a$12$31vmp2XKcUsfocVJAonNDumdZjkJGUbAdcyrMnTRG1JKiwRFHBa6u', '2026-03-16 06:27:03.592848')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------
+PictureTest: test_order_must_be_unique
+--------------------------------------
+  [1m[36mLog Delete All (0.0ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Delete All (0.0ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mPicture Maximum (0.1ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.602248"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.602248"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.602725"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.602725"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+------------------------------------------------
+PictureTest: test_valid_with_required_attributes
+------------------------------------------------
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLog Delete All (0.1ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.606750"], ["hashtags", nil], ["order", 2], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.606750"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Delete All (0.0ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.609845"], ["hashtags", nil], ["order", 3], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.609845"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.0ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.611493"], ["hashtags", nil], ["order", 4], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.611493"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Maximum (3.3ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Update (0.5ms)[0m  [1m[33mUPDATE "pictures" SET "order" = ? WHERE "pictures"."id" = ?[0m  [["order", -980190963], ["id", 980190963]]
+  [1m[36mPicture Update All (0.1ms)[0m  [1m[33mUPDATE "pictures" SET "order" = "order" - 1 WHERE "pictures"."order" BETWEEN ? AND ?[0m  [["order", 2], ["order", 3]]
+  [1m[36mPicture Create (0.3ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.609115"], ["hashtags", nil], ["order", 2], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.609115"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Update (0.5ms)[0m  [1m[33mUPDATE "pictures" SET "order" = ? WHERE "pictures"."id" = ?[0m  [["order", 3], ["id", 980190963]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Load (0.1ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mPicture Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.618764"], ["hashtags", nil], ["order", 3], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.618764"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190964], ["LIMIT", 1]]
+  [1m[36mPicture Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Load (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190965], ["LIMIT", 1]]
+  [1m[36mPicture Load (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190966], ["LIMIT", 1]]
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Destroy (0.2ms)[0m  [1m[31mDELETE FROM "pictures" WHERE "pictures"."id" = ?[0m  [["id", 980190964]]
+  [1m[36mPicture Update All (0.1ms)[0m  [1m[33mUPDATE "pictures" SET "order" = "order" - 1 WHERE ("order" > ?)[0m  [[nil, 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Load (0.1ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" ORDER BY "pictures"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Picture Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Update (0.5ms)[0m  [1m[33mUPDATE "pictures" SET "order" = ? WHERE "pictures"."id" = ?[0m  [["order", -980190963], ["id", 980190963]]
+  [1m[36mPicture Update All (0.0ms)[0m  [1m[33mUPDATE "pictures" SET "order" = "order" - 1 WHERE "pictures"."order" = ?[0m  [["order", 2]]
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Update (0.0ms)[0m  [1m[33mUPDATE "pictures" SET "order" = ? WHERE "pictures"."id" = ?[0m  [["order", 2], ["id", 980190963]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mPicture Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+-----------------------------------------------
+PictureTest: test_destroying_last_picture_works
+-----------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mLog Delete All (0.0ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Delete All (0.1ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mPicture Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mPicture Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+----------------------------------------
+PictureTest: test_invalid_without_s3_key
+----------------------------------------
+  [1m[36mLog Delete All (0.0ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Delete All (0.0ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.633963"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.633963"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+----------------------------------------------------------
+PictureTest: test_auto-assigns_order_1_when_table_is_empty
+----------------------------------------------------------
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Destroy (0.6ms)[0m  [1m[31mDELETE FROM "pictures" WHERE "pictures"."id" = ?[0m  [["id", 980190963]]
+  [1m[36mPicture Update All (0.0ms)[0m  [1m[33mUPDATE "pictures" SET "order" = "order" - 1 WHERE ("order" > ?)[0m  [[nil, 1]]
+  [1m[36mLog Delete All (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Delete All (0.1ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Create (1.7ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.632301"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.632301"]]
+  [1m[36mPicture Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.644587"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.644587"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+PictureTest: test_reorder_to_same_position_is_a_no-op
+-----------------------------------------------------
+  [1m[36mLog Delete All (0.0ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Delete All (0.0ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------
+PictureTest: test_auto-assigns_order_on_create_when_not_specified
+-----------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+------------------------------------------------------
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.649491"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.649491"]]
+  [1m[36mLog Delete All (1.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+PictureTest: test_destroying_a_picture_compacts_orders
+------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+---------------------------------------------------
+  [1m[36mPicture Delete All (0.1ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+PictureTest: test_reorder_to_moves_picture_backward
+---------------------------------------------------
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.653120"], ["hashtags", nil], ["order", 2], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.653120"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLog Delete All (0.1ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLog Delete All (0.0ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Load (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mPicture Delete All (0.0ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mPicture Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.4ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Load (0.1ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190964], ["LIMIT", 1]]
+  [1m[36mPicture Delete All (0.9ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.655992"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.655992"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.659186"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.659186"]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.657290"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.657290"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.659716"], ["hashtags", nil], ["order", 2], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.659716"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.1ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.663287"], ["hashtags", nil], ["order", 2], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.663287"]]
+  [1m[36mPicture Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.665234"], ["hashtags", nil], ["order", 3], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.665234"]]
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.664647"], ["hashtags", nil], ["order", 2], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.664647"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+Mapi::ClientTest: test_post_sends_authenticated_POST_request_with_JSON_body
+---------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.1ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Create (0.2ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.668842"], ["hashtags", nil], ["order", 3], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.668842"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.671595"], ["hashtags", nil], ["order", 4], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.671595"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Create (0.0ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.670442"], ["hashtags", nil], ["order", 3], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.670442"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Destroy (0.2ms)[0m  [1m[31mDELETE FROM "pictures" WHERE "pictures"."id" = ?[0m  [["id", 980190964]]
+  [1m[36mPicture Update All (0.1ms)[0m  [1m[33mUPDATE "pictures" SET "order" = "order" - 1 WHERE ("order" > ?)[0m  [[nil, 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Load (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Load (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190965], ["LIMIT", 1]]
+  [1m[36mPicture Load (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190966], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.673813"], ["hashtags", nil], ["order", 4], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.673813"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Update (0.1ms)[0m  [1m[33mUPDATE "pictures" SET "order" = ? WHERE "pictures"."id" = ?[0m  [["order", -980190966], ["id", 980190966]]
+  [1m[36mPicture Load (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."order" BETWEEN ? AND ? ORDER BY "pictures"."order" DESC[0m  [["order", 2], ["order", 3]]
+  [1m[36mPicture Update (0.0ms)[0m  [1m[33mUPDATE "pictures" SET "order" = ? WHERE "pictures"."id" = ?[0m  [["order", 4], ["id", 980190965]]
+  [1m[36mPicture Update (0.0ms)[0m  [1m[33mUPDATE "pictures" SET "order" = ? WHERE "pictures"."id" = ?[0m  [["order", 3], ["id", 980190964]]
+  [1m[36mPicture Update (0.0ms)[0m  [1m[33mUPDATE "pictures" SET "order" = ? WHERE "pictures"."id" = ?[0m  [["order", 2], ["id", 980190966]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPicture Load (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mPicture Load (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190964], ["LIMIT", 1]]
+  [1m[36mPicture Load (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190965], ["LIMIT", 1]]
+  [1m[36mPicture Load (0.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT ?[0m  [["id", 980190966], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------
+Mapi::ClientTest: test_post_form_sends_multipart_form_data
+----------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------
+Mapi::ClientTest: test_patch_sends_authenticated_PATCH_request
+--------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------
+Mapi::ClientTest: test_get_sends_authenticated_GET_request_and_parses_JSON
+--------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------
+Mapi::ClientTest: test_raises_error_on_4xx_response
+---------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------
+Mapi::ClientTest: test_loads_config_from_file_when_no_config_hash_provided
+--------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------
+Mapi::ClientTest: test_get_without_authentication_(no_access_token)
+-------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------
+Mapi::ClientTest: test_raises_error_on_5xx_response
+---------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------
+Mapi::AccountsTest: test_verify_credentials_fetches_authenticated_account
+-------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------
+Mapi::AccountsTest: test_update_credentials_patches_account_profile
+-------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------
+Mapi::AccountsTest: test_followers_fetches_account_followers
+------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+S3ClientTest: test_upload_sends_file_to_S3
+------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------
+S3ClientTest: test_download_retrieves_file_from_S3
+--------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------
+S3ClientTest: test_delete_removes_object_from_S3
+------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------
+LogTest: test_validates_presence_of_posted_at
+---------------------------------------------
+  [1m[36mLog Delete All (0.1ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Delete All (0.3ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 1], ["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.749927"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.749927"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------
+LogTest: test_next_scheduled_order_wraps_when_exact_next_order_has_no_picture
+-----------------------------------------------------------------------------
+  [1m[36mLog Delete All (0.0ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Delete All (0.0ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 1], ["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.3ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.791447"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.791447"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 2], ["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.795700"], ["hashtags", nil], ["order", 2], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.795700"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (6.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 3], ["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.804196"], ["hashtags", nil], ["order", 3], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.804196"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLog Create (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-03-16 06:27:03.805075"], ["picture_id", 980190965], ["posted_at", "2026-03-16 06:27:03.804854"], ["posted_order", 3], ["updated_at", "2026-03-16 06:27:03.805075"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLog Load (0.0ms)[0m  [1m[34mSELECT "logs".* FROM "logs" ORDER BY "logs"."posted_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------
+LogTest: test_next_scheduled_order_wraps_to_1_when_past_last_picture
+--------------------------------------------------------------------
+  [1m[36mLog Delete All (0.0ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Delete All (0.6ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 1], ["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.813239"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.813239"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 2], ["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.1ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.2ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.814538"], ["hashtags", nil], ["order", 2], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.814538"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLog Create (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-03-16 06:27:03.816421"], ["picture_id", 980190964], ["posted_at", "2026-03-16 06:27:03.816003"], ["posted_order", 2], ["updated_at", "2026-03-16 06:27:03.816421"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLog Load (0.0ms)[0m  [1m[34mSELECT "logs".* FROM "logs" ORDER BY "logs"."posted_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[36mPicture Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.809273', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.809273'), (298486374, '2026-03-16 06:27:03.809273', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.809273');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:27:03.812702', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:27:03.812702'), (298486374, 'MyText', 'MyString', '2026-03-16 06:27:03.812702', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:27:03.812702');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.812795', 'one@example.com', '$2a$12$Y/LiM53OratF83qvI0phxuUpO8KhNu5AeC0Ff/sqQ0avlKv.LQ8SS', '2026-03-16 06:27:03.812795'), (298486374, '2026-03-16 06:27:03.812795', 'two@example.com', '$2a$12$Y/LiM53OratF83qvI0phxuUpO8KhNu5AeC0Ff/sqQ0avlKv.LQ8SS', '2026-03-16 06:27:03.812795')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------
+LogTest: test_belongs_to_picture
+--------------------------------
+  [1m[36mLog Delete All (0.1ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mPicture Delete All (0.0ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 1], ["LIMIT", 1]]
+------------------------------------
+PasswordsControllerTest: test_update
+------------------------------------
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.832329"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.832329"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLog Create (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-03-16 06:27:03.833936"], ["picture_id", 980190963], ["posted_at", "2026-03-16 06:27:03.833707"], ["posted_order", 1], ["updated_at", "2026-03-16 06:27:03.833936"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------
+LogTest: test_validates_presence_of_posted_order
+------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLog Delete All (0.0ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Delete All (0.1ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 1], ["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.836223"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.836223"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------
+LogTest: test_next_scheduled_order_returns_last_posted_order_+_1
+----------------------------------------------------------------
+  [1m[36mLog Delete All (0.1ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Delete All (0.0ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 1], ["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.1ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.841485"], ["hashtags", nil], ["order", 1], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.841485"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 2], ["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.0ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.842398"], ["hashtags", nil], ["order", 2], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.842398"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPicture Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 3], ["LIMIT", 1]]
+  [1m[36mPicture Maximum (0.0ms)[0m  [1m[34mSELECT MAX("pictures"."order") FROM "pictures"[0m
+  [1m[36mPicture Create (0.0ms)[0m  [1m[32mINSERT INTO "pictures" ("alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["alt_text", nil], ["content_type", nil], ["created_at", "2026-03-16 06:27:03.842976"], ["hashtags", nil], ["order", 3], ["original_filename", nil], ["s3_key", "[FILTERED]"], ["sensitive_content", nil], ["updated_at", "2026-03-16 06:27:03.842976"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLog Create (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-03-16 06:27:03.843921"], ["picture_id", 980190963], ["posted_at", "2026-03-14 06:27:03.843294"], ["posted_order", 1], ["updated_at", "2026-03-16 06:27:03.843921"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLog Create (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-03-16 06:27:03.844317"], ["picture_id", 980190964], ["posted_at", "2026-03-15 06:27:03.844212"], ["posted_order", 2], ["updated_at", "2026-03-16 06:27:03.844317"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLog Load (0.0ms)[0m  [1m[34mSELECT "logs".* FROM "logs" ORDER BY "logs"."posted_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPicture Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pictures" WHERE "pictures"."order" = ? LIMIT ?[0m  [["order", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------
+LogTest: test_next_scheduled_order_returns_1_when_no_logs_exist
+---------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mLog Delete All (0.0ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mPicture Delete All (0.0ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mLog Load (0.0ms)[0m  [1m[34mSELECT "logs".* FROM "logs" ORDER BY "logs"."posted_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------
+Mapi::StatusesTest: test_create_without_sensitive_defaults_to_false
+-------------------------------------------------------------------
+Started PUT "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiODNxdkkwcGh4dSJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjQyOjAzLjg0OFoiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--1d9f60c1931f8b38d1581b8692087bc081d2cef2" for 127.0.0.1 at 2026-03-15 23:27:03 -0700
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------
+Mapi::StatusesTest: test_create_posts_a_status_with_media
+---------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------------
+Mapi::StatusesTest: test_create_with_sensitive_content_sets_sensitive_and_spoiler_text
+--------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+SessionsControllerTest: test_create_with_invalid_credentials
+------------------------------------------------------------
+------------------------------------
+SessionsControllerTest: test_destroy
+------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/session" for 127.0.0.1 at 2026-03-15 23:27:03 -0700
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSession Create (0.2ms)[0m  [1m[32mINSERT INTO "sessions" ("created_at", "ip_address", "updated_at", "user_agent", "user_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-03-16 06:27:03.861156"], ["ip_address", nil], ["updated_at", "2026-03-16 06:27:03.861156"], ["user_agent", nil], ["user_id", 298486374]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PasswordsController#update as HTML
+  Parameters: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "token"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------
+SessionsControllerTest: test_create_with_valid_credentials
+----------------------------------------------------------
+Started DELETE "/session" for 127.0.0.1 at 2026-03-15 23:27:03 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Processing by SessionsController#destroy as HTML
+Started POST "/session" for 127.0.0.1 at 2026-03-15 23:27:03 -0700
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+Processing by SessionsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]", "password"=>"[FILTERED]"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSession Destroy (0.1ms)[0m  [1m[31mDELETE FROM "sessions" WHERE "sessions"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 303 See Other in 7ms (ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------
+SessionsControllerTest: test_new
+--------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:27:03 -0700
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Processing by SessionsController#new as HTML
+[31mUnpermitted parameter: :token. Context: { controller: PasswordsController, action: update, request: #<ActionDispatch::Request:0x000000011ecf9c60>, params: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"passwords", "action"=>"update", "token"=>"[FILTERED]"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "[FILTERED]"], ["updated_at", "2026-03-16 06:27:03.883773"], ["id", 298486374]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."user_id" = ?[0m  [["user_id", 298486374]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------
+Mapi::MediaTest: test_create_sends_file_and_description_as_multipart_form
+-------------------------------------------------------------------------
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 33ms (ActiveRecord: 4.3ms (3 queries, 1 cached) | GC: 12.7ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+Mapi::MediaTest: test_create_uploads_media_attachment
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:27:03 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------
+Mapi::OAuthTest: test_authorize_url_builds_correct_OAuth_URL
+------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------
+Mapi::OAuthTest: test_token_exchanges_authorization_code_for_access_token
+-------------------------------------------------------------------------
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | GC: 0.6ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------
+ExifSanitizerTest: test_sanitize!_raises_on_failure
+---------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------
+ExifSanitizerTest: test_ALLOWED_TAGS_contains_expected_technical_tags
+---------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+ExifSanitizerTest: test_sanitize_calls_exiftool_with_correct_arguments
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------
+ExifSanitizerTest: test_sanitize!_executes_the_command
+------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------
+ExifSanitizerTest: test_ALLOWED_TAGS_does_not_contain_forbidden_tags
+--------------------------------------------------------------------
+-------------------------------------------------------
+Mapi::AppsTest: test_create_registers_a_new_application
+-------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | GC: 11.0ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 12.4ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.928403', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.928403'), (298486374, '2026-03-16 06:27:03.928403', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.928403');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:27:03.932531', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:27:03.932531'), (298486374, 'MyText', 'MyString', '2026-03-16 06:27:03.932531', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:27:03.932531');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.932601', 'one@example.com', '$2a$12$kX2nTzfsnNAYyaGY/jBZve975Z8AlkMNggkqXM0AKtLNkEOTbD/gi', '2026-03-16 06:27:03.932601'), (298486374, '2026-03-16 06:27:03.932601', 'two@example.com', '$2a$12$kX2nTzfsnNAYyaGY/jBZve975Z8AlkMNggkqXM0AKtLNkEOTbD/gi', '2026-03-16 06:27:03.932601')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.934011', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.934011'), (298486374, '2026-03-16 06:27:03.934011', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.934011');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:27:03.937167', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:27:03.937167'), (298486374, 'MyText', 'MyString', '2026-03-16 06:27:03.937167', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:27:03.937167');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.937276', 'one@example.com', '$2a$12$.HyPtO3bLjKPoh9dRSUMCecXS.E3qRKjI0PCrBZk8OryPVjcxt6ZK', '2026-03-16 06:27:03.937276'), (298486374, '2026-03-16 06:27:03.937276', 'two@example.com', '$2a$12$.HyPtO3bLjKPoh9dRSUMCecXS.E3qRKjI0PCrBZk8OryPVjcxt6ZK', '2026-03-16 06:27:03.937276')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.933477', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.933477'), (298486374, '2026-03-16 06:27:03.933477', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.933477');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:27:03.937107', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:27:03.937107'), (298486374, 'MyText', 'MyString', '2026-03-16 06:27:03.937107', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:27:03.937107');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.937279', 'one@example.com', '$2a$12$Q0cCobNDRSoeyDoDb19HWuisMbyFw7H4anIN0JBuR5xJ2NiSaWBP6', '2026-03-16 06:27:03.937279'), (298486374, '2026-03-16 06:27:03.937279', 'two@example.com', '$2a$12$Q0cCobNDRSoeyDoDb19HWuisMbyFw7H4anIN0JBuR5xJ2NiSaWBP6', '2026-03-16 06:27:03.937279')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.937296', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.937296'), (298486374, '2026-03-16 06:27:03.937296', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.937296');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:27:03.940998', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:27:03.940998'), (298486374, 'MyText', 'MyString', '2026-03-16 06:27:03.940998', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:27:03.940998');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.941057', 'one@example.com', '$2a$12$AcAjMIQf253bAHwWNfAu3.FX2CNnzqpyYpKiCmmfFt/mkgHse/Uo6', '2026-03-16 06:27:03.941057'), (298486374, '2026-03-16 06:27:03.941057', 'two@example.com', '$2a$12$AcAjMIQf253bAHwWNfAu3.FX2CNnzqpyYpKiCmmfFt/mkgHse/Uo6', '2026-03-16 06:27:03.941057')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.935279', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.935279'), (298486374, '2026-03-16 06:27:03.935279', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:03.935279');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:27:03.939426', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:27:03.939426'), (298486374, 'MyText', 'MyString', '2026-03-16 06:27:03.939426', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:27:03.939426');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:27:03.939529', 'one@example.com', '$2a$12$xSq0rqh.QMr1jIV7dthPNOMNYvOifk0ssNEDbAASC/YGC8xX8QGgK', '2026-03-16 06:27:03.939529'), (298486374, '2026-03-16 06:27:03.939529', 'two@example.com', '$2a$12$xSq0rqh.QMr1jIV7dthPNOMNYvOifk0ssNEDbAASC/YGC8xX8QGgK', '2026-03-16 06:27:03.939529')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (3.7ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------------------
+PasswordsControllerTest: test_create_for_an_unknown_user_redirects_but_sends_no_mail
+------------------------------------------------------------------------------------
+---------------------------------
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+PasswordsControllerTest: test_new
+---------------------------------
+----------------------------------------------------------------
+PasswordsControllerTest: test_update_with_non_matching_passwords
+----------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+----------------------------------
+PasswordsControllerTest: test_edit
+----------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+--------------------------------------------------------------------
+PasswordsControllerTest: test_edit_with_invalid_password_reset_token
+--------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started GET "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwiQUh3V05mQXUzLiJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjQyOjAzLjk3NloiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--121e3ace41daf2ac6c609ffab324692c1216c9b3/edit" for 127.0.0.1 at 2026-03-15 23:27:03 -0700
+Started GET "/passwords/new" for 127.0.0.1 at 2026-03-15 23:27:03 -0700
+Started PUT "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwib2g5ZFJTVU1DZSJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjQyOjAzLjk3MloiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--75c5a1048c867cd6fe241a6ec12d22a6aaf3e7f7" for 127.0.0.1 at 2026-03-15 23:27:03 -0700
+Started GET "/passwords/invalid%20token/edit" for 127.0.0.1 at 2026-03-15 23:27:03 -0700
+Processing by PasswordsController#new as HTML
+Processing by PasswordsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+Processing by PasswordsController#update as HTML
+  Parameters: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "token"=>"[FILTERED]"}
+Started POST "/passwords" for 127.0.0.1 at 2026-03-15 23:27:03 -0700
+Processing by PasswordsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+Processing by PasswordsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]"}
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 4.3ms | GC: 2.2ms)
+Redirected to http://www.example.com/passwords/new
+Filter chain halted as :set_user_by_token rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 5.3ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+[31mUnpermitted parameter: :token. Context: { controller: PasswordsController, action: update, request: #<ActionDispatch::Request:0x000000011ecf94e0>, params: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"passwords", "action"=>"update", "token"=>"[FILTERED]"} }[0m
+Redirected to http://www.example.com/session/new
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+Completed 302 Found in 19ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 6.5ms)
+Started GET "/passwords/new" for 127.0.0.1 at 2026-03-15 23:27:04 -0700
+Processing by PasswordsController#new as HTML
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:27:04 -0700
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 2.7ms | GC: 1.4ms)
+Processing by SessionsController#new as HTML
+Redirected to http://www.example.com/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwib2g5ZFJTVU1DZSJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjQyOjAzLjk3MloiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--75c5a1048c867cd6fe241a6ec12d22a6aaf3e7f7/edit
+Completed 302 Found in 31ms (ActiveRecord: 0.0ms (1 query, 1 cached) | GC: 10.5ms)
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  Rendered passwords/new.html.erb within layouts/application (Duration: 5.1ms | GC: 2.8ms)
+Started GET "/passwords/eyJfcmFpbHMiOnsiZGF0YSI6WzI5ODQ4NjM3NCwib2g5ZFJTVU1DZSJdLCJleHAiOiIyMDI2LTAzLTE2VDA2OjQyOjAzLjk3MloiLCJwdXIiOiJVc2VyXG5wYXNzd29yZF9yZXNldFxuOTAwIn19--75c5a1048c867cd6fe241a6ec12d22a6aaf3e7f7/edit" for 127.0.0.1 at 2026-03-15 23:27:04 -0700
+Processing by PasswordsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.4ms | GC: 2.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 1.5ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | GC: 18.4ms)
+Completed 200 OK in 60ms (Views: 34.3ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 26.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | GC: 21.8ms)
+Completed 200 OK in 61ms (Views: 49.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 27.6ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | GC: 15.5ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 19.1ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | GC: 14.1ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 15.3ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | GC: 11.5ms)
+Completed 200 OK in 31ms (Views: 21.6ms | ActiveRecord: 0.0ms (1 query, 1 cached) | GC: 14.7ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "logs";
+DELETE FROM "pictures";
+DELETE FROM "users";
+INSERT INTO "logs" ("id", "created_at", "picture_id", "posted_at", "posted_order", "updated_at") VALUES (980190962, '2026-03-16 06:27:04.073201', 980190962, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:04.073201'), (298486374, '2026-03-16 06:27:04.073201', 298486374, '2026-03-15 23:24:36', 1, '2026-03-16 06:27:04.073201');
+INSERT INTO "pictures" ("id", "alt_text", "content_type", "created_at", "hashtags", "order", "original_filename", "s3_key", "sensitive_content", "updated_at") VALUES (980190962, 'MyText', 'MyString', '2026-03-16 06:27:04.077353', 'MyText', 1, 'MyString', 'photos/fixture_one.jpg', 'MyString', '2026-03-16 06:27:04.077353'), (298486374, 'MyText', 'MyString', '2026-03-16 06:27:04.077353', 'MyText', 2, 'MyString', 'photos/fixture_two.jpg', 'MyString', '2026-03-16 06:27:04.077353');
+INSERT INTO "users" ("id", "created_at", "email_address", "password_digest", "updated_at") VALUES (980190962, '2026-03-16 06:27:04.077427', 'one@example.com', '$2a$12$S9pNZNft0uFrOqUrgegi3uox2bZTtTlnLskhVR.GAHhreBIvGz0aK', '2026-03-16 06:27:04.077427'), (298486374, '2026-03-16 06:27:04.077427', 'two@example.com', '$2a$12$S9pNZNft0uFrOqUrgegi3uox2bZTtTlnLskhVR.GAHhreBIvGz0aK', '2026-03-16 06:27:04.077427')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------
+PasswordsControllerTest: test_create
+------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/passwords" for 127.0.0.1 at 2026-03-15 23:27:04 -0700
+Processing by PasswordsController#create as HTML
+  Parameters: {"email_address"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "[FILTERED]"], ["LIMIT", 1]]
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: a6ba5623-5170-42fe-9d53-3e9b3368252c) to Test(default) with arguments: "PasswordsMailer", "reset", "deliver_now", {:args=>[#<GlobalID:0x000000011f05da78 @uri=#<URI::GID gid://ephemera-temp/User/298486374>>]}
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 12ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 5.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+Started GET "/session/new" for 127.0.0.1 at 2026-03-15 23:27:04 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.7ms | GC: 2.4ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSession Create (0.2ms)[0m  [1m[32mINSERT INTO "sessions" ("created_at", "ip_address", "updated_at", "user_agent", "user_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-03-16 06:27:04.134058"], ["ip_address", "127.0.0.1"], ["updated_at", "2026-03-16 06:27:04.134058"], ["user_agent", nil], ["user_id", 298486374]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 264ms (ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 1.3ms)
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 271ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | GC: 11.2ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 12.3ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
