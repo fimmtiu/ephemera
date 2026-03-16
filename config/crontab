@@ -1,0 +1,5 @@
+# Post next scheduled picture every 3 days at 10:11 AM Pacific
+11 10 */3 * * cd /app && bin/rails runner -e production "PostpicService.new.run" >> /var/log/postpic.log 2>&1
+
+# Renew SSL certificate every 2 months
+0 3 1 */2 * certbot renew --nginx >> /var/log/certbot.log 2>&1
