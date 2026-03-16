@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_16_061436) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_16_062436) do
+  create_table "logs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "picture_id", null: false
+    t.datetime "posted_at"
+    t.integer "posted_order"
+    t.datetime "updated_at", null: false
+    t.index ["picture_id"], name: "index_logs_on_picture_id"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.text "alt_text"
+    t.string "content_type"
+    t.datetime "created_at", null: false
+    t.text "hashtags"
+    t.integer "order", null: false
+    t.string "original_filename"
+    t.string "s3_key", null: false
+    t.string "sensitive_content"
+    t.datetime "updated_at", null: false
+    t.index ["order"], name: "index_pictures_on_order", unique: true
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "ip_address"
@@ -28,5 +50,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_16_061436) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "logs", "pictures"
   add_foreign_key "sessions", "users"
 end

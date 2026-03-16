@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  s3_key: photos/fixture_one.jpg
+  alt_text: MyText
+  hashtags: MyText
+  sensitive_content: MyString
+  order: 1
+  original_filename: MyString
+  content_type: MyString
+
+two:
+  s3_key: photos/fixture_two.jpg
+  alt_text: MyText
+  hashtags: MyText
+  sensitive_content: MyString
+  order: 2
+  original_filename: MyString
+  content_type: MyString

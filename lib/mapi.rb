@@ -3,6 +3,7 @@ require "mapi/apps"
 require "mapi/media"
 require "mapi/accounts"
 require "mapi/oauth"
+require "mapi/statuses"
 
 module Mapi
   class ApiError < StandardError
