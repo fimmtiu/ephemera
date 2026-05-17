@@ -134,6 +134,11 @@ a {
 
 .btn-back {
   margin-top: 2em;
+  background-color: #6c757d;
+}
+
+.btn-back:hover {
+  background-color: #5a6268;
 }
 
 /* Picture preview */
