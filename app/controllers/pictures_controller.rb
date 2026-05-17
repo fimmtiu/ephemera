@@ -38,6 +38,7 @@ class PicturesController < ApplicationController
   end
 
   def edit
+    @image_url = S3Client.new.presigned_url(@picture.s3_key)
   end
 
   def update

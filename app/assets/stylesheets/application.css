@@ -132,6 +132,19 @@ a {
   background-color: #c82333;
 }
 
+/* Picture preview */
+.picture-preview {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.picture-preview img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
 /* Tables */
 table {
   width: 100%;

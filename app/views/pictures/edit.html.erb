@@ -1,5 +1,9 @@
 <h1>Edit Picture</h1>
 
+<div class="picture-preview">
+  <%= image_tag @image_url, alt: @picture.alt_text.presence || @picture.original_filename %>
+</div>
+
 <%= form_with model: @picture do |f| %>
   <div class="form-group">
     <%= f.label :alt_text %>
