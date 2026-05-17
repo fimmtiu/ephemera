@@ -4,6 +4,24 @@
   <%= image_tag @image_url, alt: @picture.alt_text.presence || @picture.original_filename %>
 </div>
 
+<div class="picture-actions">
+  <%= link_to "Download", @download_url, download: @picture.original_filename, class: "btn" %>
+  <button type="button" class="btn" onclick="document.getElementById('replace-dialog').showModal()">Replace</button>
+</div>
+
+<dialog id="replace-dialog">
+  <h2>Replace Image</h2>
+  <%= form_with url: replace_picture_path(@picture), method: :patch, multipart: true do |f| %>
+    <div class="form-group">
+      <%= f.file_field :file, accept: "image/*", name: "picture[file]" %>
+    </div>
+    <div class="dialog-actions">
+      <button type="button" class="btn" onclick="document.getElementById('replace-dialog').close()">Cancel</button>
+      <%= f.submit "Replace", class: "btn" %>
+    </div>
+  <% end %>
+</dialog>
+
 <%= form_with model: @picture do |f| %>
   <div class="form-group">
     <%= f.label :alt_text %>

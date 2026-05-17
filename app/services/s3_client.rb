@@ -25,8 +25,10 @@ class S3Client
     @client.delete_object(bucket: @bucket, key: key)
   end
 
-  def presigned_url(key, expires_in: 3600)
+  def presigned_url(key, expires_in: 3600, response_content_disposition: nil)
     signer = Aws::S3::Presigner.new(client: @client)
-    signer.presigned_url(:get_object, bucket: @bucket, key: key, expires_in: expires_in)
+    options = { bucket: @bucket, key: key, expires_in: expires_in }
+    options[:response_content_disposition] = response_content_disposition if response_content_disposition
+    signer.presigned_url(:get_object, **options)
   end
 end

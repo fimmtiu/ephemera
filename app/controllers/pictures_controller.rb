@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :set_picture, only: [:show, :edit, :update, :destroy, :replace]
 
   def index
     @pictures = Picture.order(:order)
@@ -38,7 +38,11 @@ class PicturesController < ApplicationController
   end
 
   def edit
-    @image_url = S3Client.new.presigned_url(@picture.s3_key)
+    s3 = S3Client.new
+    @image_url = s3.presigned_url(@picture.s3_key)
+    filename = @picture.original_filename || File.basename(@picture.s3_key)
+    @download_url = s3.presigned_url(@picture.s3_key,
+      response_content_disposition: "attachment; filename=\"#{filename}\"")
   end
 
   def update
@@ -53,6 +57,27 @@ class PicturesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def replace
+    file = params[:picture][:file]
+
+    if file.blank?
+      redirect_to edit_picture_path(@picture), alert: "Please select a file."
+      return
+    end
+
+    tempfile = file.tempfile.path
+    ExifSanitizer.new(tempfile).sanitize!
+
+    old_key = @picture.s3_key
+    new_key = "pictures/#{SecureRandom.uuid}/#{file.original_filename}"
+    s3 = S3Client.new
+    s3.upload(new_key, tempfile, content_type: file.content_type)
+    @picture.update!(s3_key: new_key, original_filename: file.original_filename, content_type: file.content_type)
+    s3.delete(old_key)
+
+    redirect_to edit_picture_path(@picture), notice: "Image replaced."
   end
 
   def destroy

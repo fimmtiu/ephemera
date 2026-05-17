@@ -154,6 +154,38 @@ a {
   max-height: 400px;
 }
 
+/* Picture actions */
+.picture-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Dialog */
+dialog {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 1.5rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+dialog h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 /* Tables */
 table {
   width: 100%;
