@@ -47,12 +47,17 @@ class EphemeraUploadClient
   def login(email, password)
     resp = get("/session/new")
     abort "Could not reach login page (#{resp.code})" unless resp.code == "200"
+    abort "Could not find CSRF token on login page — is EPHEMERA_HOST correct?" unless @csrf_token
 
     resp = post_form("/session",
       "authenticity_token" => @csrf_token,
       "email_address"      => email,
       "password"           => password
     )
+
+    if resp.code == "422"
+      abort "CSRF token rejected (422) — the login page may have changed"
+    end
 
     location = resp["location"].to_s
     if location.end_with?("/session/new") || location.end_with?("/session")
