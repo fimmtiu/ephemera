@@ -132,6 +132,10 @@ a {
   background-color: #c82333;
 }
 
+.btn-back {
+  margin-left: 2em;
+}
+
 /* Picture preview */
 .picture-preview {
   margin-bottom: 1.5rem;
