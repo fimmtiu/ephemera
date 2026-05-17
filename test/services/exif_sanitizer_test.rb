@@ -55,6 +55,11 @@ class ExifSanitizerTest < ActiveSupport::TestCase
     assert_includes ExifSanitizer::ALLOWED_TAGS, "Orientation"
   end
 
+  test "command preserves ICC_Profile for color management" do
+    sanitizer = ExifSanitizer.new("/tmp/test_image.jpg")
+    assert_includes sanitizer.send(:build_command), "-ICC_Profile:all"
+  end
+
   test "ALLOWED_TAGS does not contain forbidden tags" do
     forbidden = %w[GPSLatitude GPSLongitude DateTime Make Model SerialNumber Artist Copyright Software]
     forbidden.each do |tag|

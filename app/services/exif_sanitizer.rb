@@ -40,6 +40,7 @@ class ExifSanitizer
   def build_command
     cmd = ["exiftool", "-all=", "-tagsfromfile", "@"]
     ALLOWED_TAGS.each { |tag| cmd << "-#{tag}" }
+    cmd << "-ICC_Profile:all"
     cmd << "-overwrite_original"
     cmd << @file_path
     cmd
