@@ -21,8 +21,9 @@
 /db/*.sqlite3
 /db/*.sqlite3-*
 
-# Ignore master key for decrypting credentials and more.
+# Ignore credentials files -- we don't have a way to check them back in from the production host anyhow.
 /config/master.key
+/config/credentials.yml.enc
 
 # Ignore node_modules and JS assets
 /node_modules
@@ -30,3 +31,6 @@
 
 # Mastodon credentials
 /config/mastodon.json
+
+# Ignore vendored gems, because we roll hard like that.
+/vendor
