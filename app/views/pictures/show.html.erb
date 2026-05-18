@@ -1,5 +1,9 @@
 <h1><%= @picture.original_filename || @picture.s3_key %></h1>
 
+<div class="picture-preview">
+  <%= image_tag @image_url, alt: @picture.alt_text.presence || @picture.original_filename %>
+</div>
+
 <dl>
   <dt>Order</dt>
   <dd><%= @picture.order %></dd>

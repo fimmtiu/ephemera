@@ -6,6 +6,7 @@ class PicturesController < ApplicationController
   end
 
   def show
+    @image_url = S3Client.new.presigned_url(@picture.s3_key)
   end
 
   def new
@@ -53,7 +54,12 @@ class PicturesController < ApplicationController
     end
 
     if @picture.update(picture_params)
-      redirect_to pictures_path, notice: "Picture updated."
+      if params[:commit] == "Save and next"
+        next_picture = Picture.where('"order" > ?', @picture.order).order(:order).first
+        redirect_to next_picture ? edit_picture_path(next_picture) : pictures_path, notice: "Picture updated."
+      else
+        redirect_to pictures_path, notice: "Picture updated."
+      end
     else
       render :edit, status: :unprocessable_entity
     end
