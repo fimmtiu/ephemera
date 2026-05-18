@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: [:show, :edit, :update, :destroy, :replace]
+  before_action :set_picture, only: [:show, :edit, :update, :destroy, :replace, :delete_and_next]
 
   def index
     @pictures = Picture.order(:order)
@@ -84,6 +84,13 @@ class PicturesController < ApplicationController
     s3.delete(old_key)
 
     redirect_to edit_picture_path(@picture), notice: "Image replaced."
+  end
+
+  def delete_and_next
+    next_picture = Picture.where('"order" > ?', @picture.order).order(:order).first
+    S3Client.new.delete(@picture.s3_key)
+    @picture.destroy!
+    redirect_to next_picture ? edit_picture_path(next_picture) : pictures_path, notice: "Picture deleted."
   end
 
   def destroy

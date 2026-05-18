@@ -8,7 +8,7 @@
 
   <div class="form-group">
     <%= f.label :note, "Bio" %>
-    <%= f.text_area :note, value: @profile["note"], rows: 5, name: "profile[note]" %>
+    <%= f.text_area :note, value: strip_tags(@profile["note"]), rows: 5, name: "profile[note]" %>
   </div>
 
   <%= f.submit "Save", class: "btn" %>

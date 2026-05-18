@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :pictures do
     member do
       patch :replace
+      delete :delete_and_next
     end
   end
   resource :mastodon_profile, only: [:show, :edit, :update]

@@ -47,4 +47,15 @@
   <%= f.submit "Save and next", class: "btn" %>
 <% end %>
 
+<button type="button" class="btn btn-danger" onclick="document.getElementById('delete-and-next-dialog').showModal()">Delete and next</button>
+
+<dialog id="delete-and-next-dialog">
+  <h2>Delete this picture?</h2>
+  <p>This cannot be undone.</p>
+  <div class="dialog-actions">
+    <button type="button" class="btn" onclick="document.getElementById('delete-and-next-dialog').close()">Cancel</button>
+    <%= button_to "Delete", delete_and_next_picture_path(@picture), method: :delete, class: "btn btn-danger" %>
+  </div>
+</dialog>
+
 <%= link_to "Back", pictures_path, class: "btn btn-back" %>
